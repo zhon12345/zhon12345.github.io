@@ -1,0 +1,79 @@
+.hero-section {
+	background: url(../assets/bg-img-1.webp) center center no-repeat fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.hero-container,
+.hero-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	gap: 1rem;
+	color: var(--eerie-black);
+}
+
+.hero-header h1 {
+	font-size: clamp(1.5rem, 5vw + 2rem, 6rem);
+}
+
+.hero-header p {
+	font-size: clamp(1rem, 2vw + 0.5rem, 1.7rem);
+}
+
+/* Social Media Icons */
+.hero-icons {
+	display: flex;
+	gap: 2rem;
+	margin-top: 1rem;
+}
+
+.fab {
+	font-size: clamp(1rem, 3vw + 1rem, 3rem);
+	color: black;
+}
+
+.fa-github:hover {
+	opacity: 0.7;
+}
+
+.fa-discord:hover {
+	color: #7289da;
+}
+
+.fa-instagram:hover {
+	background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.fa-telegram:hover {
+	color: #0088cc;
+}
+
+@media (max-width: 715px) {
+	.hero-icons {
+		width: 60%;
+	}
+}
+
+@media (min-width: 401px) and (max-width: 600px) {
+	.hero-header p {
+		width: 75%;
+	}
+
+	.hero-icons {
+		margin-top: 0.5rem;
+	}
+}
+
+@media (max-width: 400px) {
+	.hero-icons {
+		margin-top: 0;
+	}
+}

@@ -2,225 +2,155 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<!-- Website Title, Description & Icon-->
-		<link rel="icon" href="./assets/Glitch Z Cicle.png" />
+		<link rel="icon" href="./assets/icon.webp" />
 		<title>Ng Zhun Onn - Personal Portfolio</title>
-		<meta name="description" content="A full-time student based in Malaysia and a HUGE tech geek interested in all things computer related no matter software or hardware." />
+		<meta name="description" content="The personal portfolio of a young and upcoming dev." />
 
 		<!-- CSS File -->
-		<link rel="stylesheet" href="style.css" />
-
-		<!-- Google Fonts -->
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" />
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" media="print" onload="this.media='all'" />
-
-		<noscript>
-			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" />
-		</noscript>
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/navbar.css" />
+		<link rel="stylesheet" href="./css/hero.css" />
+		<link rel="stylesheet" href="./css/about.css" />
+		<link rel="stylesheet" href="./css/projects.css" />
+		<link rel="stylesheet" href="./css/contact.css" />
+		<link rel="stylesheet" href="./css/footer.css" />
 
 		<!-- Font Awesome -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 	</head>
 
-	<body>
+	<body onload="generateProjects(); hideSideButtons();">
 		<!-- Navigation Bar -->
-		<nav class="nav">
-			<div class="container">
+		<nav class="navbar">
+			<div class="nav-container">
 				<!-- Nav Logo -->
-				<div class="nav__logo">
-					<a href="#home">Ng Zhun Onn</a>
-				</div>
+				<a class="nav-logo" href="#home" draggable="false">Ng Zhun Onn</a>
 
 				<!-- Nav Links -->
-				<div class="nav__toggle" id="mobile-menu">
+				<ul class="nav-links">
+					<li><a class="nav-link" href="#home" draggable="false">Home</a></li>
+					<li><a class="nav-link" href="#about" draggable="false">About</a></li>
+					<li><a class="nav-link" href="#projects" draggable="false">Projects</a></li>
+					<li><a class="nav-link" href="#contact" draggable="false">Contact</a></li>
+				</ul>
+
+				<div class="hamburger">
 					<span class="bar"></span>
 					<span class="bar"></span>
 					<span class="bar"></span>
 				</div>
-				<ul class="nav__links">
-					<li><a href="#home" id="home-page">Home</a></li>
-					<li><a href="#about" id="about-page">About</a></li>
-					<li><a href="#projects" id="projects-page">Projects</a></li>
-					<li><a href="#contact" id="contact-page">Contact</a></li>
-				</ul>
 			</div>
 		</nav>
 
-		<!-- Home Section -->
-		<section id="home" class="home__section">
+		<!-- Hero Section -->
+		<section id="home" class="hero-section">
 			<div class="container">
-				<!-- Home Header -->
-				<div class="home__header">
-					<h1>Ng Zhun Onn</h1>
-					<p>Always learning, and trying new things!</p>
-				</div>
+				<div class="hero-container">
+					<!-- Hero Header -->
+					<div class="hero-header">
+						<h1>Ng Zhun Onn</h1>
+						<p>Always learning, and trying new things!</p>
+					</div>
 
-				<!-- Home Social Icons -->
-				<div class="home__icons">
-					<a href="https://www.instagram.com/zh0n12345/" class="fab fa-instagram" aria-label="Instagram" rel="noopener" target="_blank"></a>
-					<a href="https://github.com/zhon12345/" class="fab fa-github" aria-label="Github" rel="noopener" target="_blank"></a>
-					<a href="https://discord.gg/jMpw3jw" class="fab fa-discord" aria-label="Discord" rel="noopener" target="_blank"></a>
-					<a href="https://www.youtube.com/channel/UCXwre0I4Rn1MdkGkEZykOqA" class="fab fa-youtube" aria-label="Youtube" rel="noopener" target="_blank"></a>
+					<!-- Hero Social Icons -->
+					<div class="hero-icons">
+						<a href="https://github.com/zhon12345/" class="fab fa-github" aria-label="my GitHub account" target="_blank" draggable="false"></a>
+						<a href="https://discord.gg/jMpw3jw" class="fab fa-discord" aria-label="my Discord server" target="_blank" draggable="false"></a>
+						<a href="https://instagram.com/zh0n12345/" class="fab fa-instagram" aria-label="my Instagram account" target="_blank" draggable="false"></a>
+						<a href="https://t.me/zhon12345" class="fab fa-telegram" aria-label="my Telegram account" target="_blank" draggable="false"></a>
+					</div>
 				</div>
 			</div>
 		</section>
 
 		<!-- About Section -->
-		<section id="about" class="about__section">
+		<section id="about" class="about-section">
 			<div class="container">
 				<!-- About Header -->
-				<h1>About Me</h1>
-				<div class="about__container">
+				<h1 class="section-header">About Me</h1>
+
+				<div class="about-container">
 					<!-- About Image -->
-					<div class="about__img--container">
-						<div class="about__img--card">
-							<img src="./assets/profile.webp" class="profile" alt="Profile Picture" />
-						</div>
-					</div>
+					<img class="about-img" src="./assets/profile.webp" alt="Profile Picture" width="400px" height="400px" loading="lazy" draggable="false" />
 
 					<!-- About Info -->
-					<div class="about__content">
-						<p>“ A full-time student based in Malaysia <img src="https://cdn-icons-png.flaticon.com/512/197/197581.png" width="20" height="20" alt="Malaysia Flag" /> and a HUGE tech geek interested in all things computer related no matter software or hardware. ”</p>
+					<div class="about-content">
+						<p>“ A student from <b>Kuala Lumpur, Malaysia</b> <img src="/assets/flag.webp" alt="MY Flag" width="30" height="30px" style="display: initial" loading="lazy" draggable="false" /> who enjoys tinkering with computers, both hardware and software and is currently pursuing a Diploma in IT. ”</p>
 					</div>
 				</div>
 			</div>
 		</section>
 
 		<!-- Projects Section -->
-		<section id="projects" class="projects__section">
+		<section id="projects" class="projects-section">
 			<div class="container">
 				<!-- Projects Header -->
-				<h1>Projects</h1>
+				<h1 class="section-header">Projects</h1>
 
-				<div class="projects__wrapper">
-					<!-- Project 1 -->
-					<div class="projects__card">
-						<!-- Project Image -->
-						<img src="./assets/tavern-keeper.webp" width="300" height="151.73" alt="Tavern Keeper Preview" />
-
-						<!-- Project Info -->
-						<h2>Tavern Keeper</h2>
-						<p>A feature packed multipurpose Discord Bot</p>
-
-						<div class="projects__btn">
-							<a href="https://discord.com/oauth2/authorize?client_id=722054700308103200&scope=bot&permissions=1007807606" rel="noopener" target="_blank">
-								<button class="button--1">Invite Me</button>
-							</a>
-							<a href="https://tavernkeeper.ml" rel="noopener" target="_blank">
-								<button class="button--2">View Website</button>
-							</a>
-						</div>
-					</div>
-
-					<!-- Project 2 -->
-					<div class="projects__card">
-						<!-- Project Image -->
-						<img src="./assets/calculator.webp" width="300" height="151.73" alt="Calculator Preview" />
-
-						<!-- Project Info -->
-						<h2>Calculator</h2>
-						<p>A calculator made with HTML, CSS and JavaScript</p>
-
-						<div class="projects__btn">
-							<a href="https://zhon12345-calculator.netlify.app/" rel="noopener" target="_blank">
-								<button class="button--1">Live Demo</button>
-							</a>
-							<a href="https://github.com/zhon12345/Web-Applications/tree/Simple-Calculator" rel="noopener" target="_blank">
-								<button class="button--2">Source Code</button>
-							</a>
-						</div>
-					</div>
-
-					<!-- Project 3 -->
-					<div class="projects__card">
-						<!-- Project Image -->
-						<img src="./assets/snake.png" width="300" height="151.73" alt="Snake Preview" />
-
-						<!-- Project Info -->
-						<h2>Snake Game</h2>
-						<p>The classic snake game recreated in HTML, CSS and JavaScript</p>
-
-						<div class="projects__btn">
-							<a href="https://zhon12345-snake-game.netlify.app/" rel="noopener" target="_blank">
-								<button class="button--1">Live Demo</button>
-							</a>
-							<a href="https://github.com/zhon12345/Web-Applications/tree/Snake-Game" rel="noopener" target="_blank">
-								<button class="button--2">Source Code</button>
-							</a>
-						</div>
-					</div>
-
-					<!-- Project 4 -->
-					<div class="projects__card">
-						<!-- Project Image -->
-						<img src="./assets/tetris.webp" width="300" height="151.73" alt="Tetris Clone Preview" />
-
-						<!-- Project Info -->
-						<h2>Tetris Clone</h2>
-						<p>A clone of the classic Tetris made with React.js</p>
-
-						<div class="projects__btn">
-							<a href="https://zhon12345-tetris.netlify.app/" rel="noopener" target="_blank">
-								<button class="button--1">Live Demo</button>
-							</a>
-							<a href="https://github.com/zhon12345/Web-Projects/tree/React-Tetris" rel="noopener" target="_blank">
-								<button class="button--2">Source Code</button>
-							</a>
-						</div>
-					</div>
+				<div class="slider-container">
+					<button class="slider-button" id="prev" aria-label="Previous"><i class="fa-solid fa-circle-chevron-left"></i></button>
+					<button class="slider-button" id="next" aria-label="Next"><i class="fa-solid fa-circle-chevron-right"></i></button>
+					<div class="projects-container"></div>
 				</div>
 			</div>
 		</section>
 
 		<!-- Contact Section -->
-		<section id="contact" class="contact__section">
+		<section id="contact" class="contact-section">
 			<div class="container">
 				<!-- Contact Header -->
-				<h1>Contact Me</h1>
+				<h1 class="section-header">Contact Me</h1>
 
 				<!-- Contact Form -->
-				<div class="contact--form">
+				<div class="form-container">
 					<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdF5qga6z_q7fjXDJyMbPfMfCwbgwiFs_HSROis9WgbNeY98Q/formResponse" method="POST" target="_blank">
-						<div class="form-element">
-							<label>Name</label>
-							<input type="text" name="entry.911719008" placeholder="Name" required />
-						</div>
+						<div class="form-details">
+							<div class="item">
+								<label for="name">Name</label>
+								<input type="text" id="name" name="entry.911719008" required />
+							</div>
 
-						<div class="form-element">
-							<label>Email</label>
-							<input type="email" name="entry.1299471270" placeholder="Email" required />
+							<div class="item">
+								<label for="email">Email</label>
+								<input type="email" id="email" name="entry.1299471270" required />
+							</div>
 						</div>
-
-						<div class="form-element">
-							<label for="message">Message</label>
-							<textarea id="message" name="entry.1992332467" cols="30" rows="9" required></textarea>
+						<div class="form-message">
+							<div class="item">
+								<label for="message">Message</label>
+								<textarea id="message" name="entry.1992332467" cols="30" rows="9" required></textarea>
+							</div>
 						</div>
-
-						<button type="submit">Send Message</button>
+						<div class="form-action">
+							<button class="submit" type="submit">Send Message</button>
+							<button class="reset" type="reset">Reset</button>
+						</div>
 					</form>
 				</div>
 			</div>
 		</section>
 
 		<!-- Footer Section -->
-		<section class="footer__section">
-			<div class="container">
+		<section class="footer">
+			<div class="footer-container">
 				<!-- Back to top Icon -->
-				<a href="#home" class="fas fa-angle-up" aria-label="Back to top"></a>
+				<a href="#home" class="fas fa-angle-up" aria-label="Back to Top" draggable="false"></a>
+
+				<hr />
 
 				<!-- Footer text -->
-				<div class="footer__content">
-					<center>
-						<hr />
-					</center>
-					<p>&copy; <span id="copyright-year">2021</span> - Made with ❤ by <a href="https://github.com/zhon12345" rel="noopener" target="_blank"> zhon12345 </a></p>
+				<div class="footer-content">
+					<p>&copy; 2021 - <span id="copyright-year">2021</span> - Made with ❤ by <a href="https://github.com/zhon12345" target="_blank" draggable="false"> zhon12345 </a></p>
 				</div>
 			</div>
 		</section>
 
-		<script defer src="./script.js"></script>
+		<script src="./js/data.js"></script>
+		<script src="./js/script.js"></script>
 	</body>
 </html>

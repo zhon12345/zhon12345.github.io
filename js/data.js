@@ -1,0 +1,47 @@
+const projects = [
+    {
+        name: "Tavern Keeper",
+        description: "A feature-packed multipurpose Discord Bot with over 100+ commands",
+        thumbnail: "./assets/projects/tavern-keeper.webp",
+        label1: "Invite Me",
+        url1: "https://discord.com/oauth2/authorize?client_id=722054700308103200&scope=bot&permissions=1007807606",
+        label2: "View Website",
+        url2: "#",
+    },
+    {
+        name: "Ticket Bot",
+        description: "A simple Discord Ticket Bot created in under 24 hours as a challenge",
+        thumbnail: "./assets/projects/ticket-bot.webp",
+        label1: "Invite Me",
+        url1: "https://discord.com/oauth2/authorize?client_id=777936076408356875&scope=bot&permissions=532576324688",
+        label2: "Source Code",
+        url2: "https://github.com/zhon12345/Ticket-Bot",
+    },
+    {
+        name: "Calculator",
+        description: "A calculator made with HTML, CSS and JavaScript",
+        thumbnail: "./assets/projects/calculator.webp",
+        label1: "Live Demo",
+        url1: "https://zhon12345-calculator.netlify.app/",
+        label2: "Source Code",
+        url2: "https://github.com/zhon12345/Web-Applications/tree/Simple-Calculator",
+    },
+    {
+        name: "Snake Clone",
+        description: "The classic snake game recreated in HTML, CSS and JavaScript",
+        thumbnail: "./assets/projects/snake.webp",
+        label1: "Live Demo",
+        url1: "https://zhon12345-snake-game.netlify.app/",
+        label2: "Source Code",
+        url2: "https://github.com/zhon12345/Web-Applications/tree/Snake-Game",
+    },
+    {
+        name: "Tetris Clone",
+        description: "A clone of the classic Tetris made with React.js",
+        thumbnail: "./assets/projects/tetris.webp",
+        label1: "Live Demo",
+        url1: "https://zhon12345-tetris.netlify.app/",
+        label2: "Source Code",
+        url2: "https://github.com/zhon12345/Web-Projects/tree/React-Tetris",
+    }
+]
