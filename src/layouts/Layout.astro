@@ -1,7 +1,7 @@
 ---
-import "@/styles/global.css"
+import "@/styles/global.css";
 
-import Icon from "@/assets/avatar.png";
+import Avatar from "@/assets/avatar.png";
 
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
@@ -9,15 +9,15 @@ import Footer from "@/components/Footer.vue";
 const { title, description } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<link rel="icon" href={Icon.src} />
-		<title>{ title }</title>
-		<meta name="description" content={description}>
+		<link rel="icon" href={Avatar.src} />
+		<title>{title}</title>
+		<meta name="description" content={description} />
 	</head>
 	<body class="bg-background text-text">
 		<Header client:load />
@@ -34,7 +34,7 @@ const { title, description } = Astro.props;
 		const preferesDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 		return selectedTheme || (preferesDark ? "dark" : "light");
-	}
+	};
 
 	const theme = getPreferredTheme();
 	localStorage.setItem("theme", theme);
