@@ -5,7 +5,6 @@
       class="duration-300 ease-out hover:-translate-y-1 hover:opacity-75"
       aria-label="Back to Top"
     >
-      <FontAwesomeIcon :icon="faAngleUp" class="z-0 w-6" />
     </a>
 
     <hr class="w-4/5" />
@@ -27,8 +26,6 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
 const currentYear = computed(() => new Date().getFullYear().toString());
 </script>
