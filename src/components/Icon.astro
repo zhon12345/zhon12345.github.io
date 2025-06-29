@@ -1,0 +1,23 @@
+---
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+
+const icons = import.meta.glob<{ default: AstroComponentFactory }>("./Icons/*.astro", { eager: true });
+export interface Props {
+	name: string;
+	[key: string]: any;
+}
+
+const { name, ...props } = Astro.props;
+
+const iconKey = Object.keys(icons).find((key) => key.toLowerCase().endsWith(`${name.toLowerCase()}.astro`));
+
+const IconComponent = iconKey ? icons[iconKey].default : null;
+---
+
+{IconComponent ? <IconComponent {...props} /> : <span>Icon not found: {name}</span>}
+
+<style>
+	svg {
+		height: auto;
+	}
+</style>
