@@ -1,4 +1,6 @@
 ---
+import Container from "@/components/Container.astro";
+import ThemeToggle from "@/components/Header/ThemeToggle.astro";
 import MobileMenu from "@/components/Header/MobileMenu.vue";
 
 const menuItems = [
@@ -10,23 +12,31 @@ const menuItems = [
 ---
 
 <header class="bg-background fixed z-50 w-full md:shadow-xl/20">
-	<nav class="flex h-16 items-center justify-around">
-		<a class="text-xl font-semibold tracking-wider uppercase md:text-2xl" href="/"> Ng Zhun Onn </a>
+	<Container>
+		<nav class="flex h-16 items-center justify-between md:grid md:grid-cols-3 md:items-center">
+			<div class="md:justify-self-start">
+				<a class="text-xl font-semibold tracking-wider uppercase lg:text-2xl" href="/"> Ng Zhun Onn </a>
+			</div>
 
-		<ul class="hidden md:flex md:gap-8 lg:gap-14">
-			{
-				menuItems.map((item) => (
-					<li>
-						<a href={item.href} class="hover:underline">
-							{item.name}
-						</a>
-					</li>
-				))
-			}
-		</ul>
+			<ul class="hidden gap-6 justify-self-center md:flex lg:gap-8 xl:gap-10 2xl:gap-12">
+				{
+					menuItems.map((item) => (
+						<li>
+							<a href={item.href} class="hover:underline">
+								{item.name}
+							</a>
+						</li>
+					))
+				}
+			</ul>
 
-		<MobileMenu menuItems={menuItems} client:load />
-	</nav>
+			<div class="flex gap-4 md:justify-self-end">
+				<ThemeToggle class="w-6 cursor-pointer md:w-7" />
+
+				<MobileMenu menuItems={menuItems} client:load />
+			</div>
+		</nav>
+	</Container>
 </header>
 
 <div id="dropdown"></div>

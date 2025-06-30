@@ -1,0 +1,72 @@
+---
+import Icon from "@/components/Icon.astro";
+
+const { class: className } = Astro.props;
+---
+
+<button id="themeToggle" class={className} aria-label="Toggle Theme">
+	<Icon name="sun" id="light" class="hidden" />
+	<Icon name="moon" id="dark" class="hidden" />
+	<Icon name="computer" id="system" class="hidden" />
+</button>
+
+<script is:inline>
+	const THEME_OPTIONS = ["light", "dark", "system"];
+
+	function getPreferredTheme() {
+		const storedTheme = localStorage?.getItem("theme") ?? "";
+		if (["dark", "light"].includes(storedTheme)) {
+			return storedTheme;
+		}
+
+		return "system";
+	}
+
+	function applyTheme(theme, save = false) {
+		if (save) {
+			localStorage.setItem("theme", theme);
+		}
+
+		if (theme === "system") {
+			localStorage.removeItem("theme");
+			const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+			document.documentElement.classList.toggle("dark", prefersDark);
+		} else {
+			document.documentElement.classList.toggle("dark", theme === "dark");
+		}
+
+		updateIcons(theme);
+	}
+
+	function updateIcons(theme) {
+		THEME_OPTIONS.forEach((option) => {
+			const icon = document.getElementById(option);
+			if (icon) {
+				icon.classList.toggle("hidden", option !== theme);
+			}
+		});
+	}
+
+	function setupThemeToggle() {
+		applyTheme(getPreferredTheme());
+
+		const themeToggle = document.getElementById("themeToggle");
+		if (themeToggle) {
+			themeToggle.onpointerup = () => {
+				const currentTheme = getPreferredTheme();
+				const i = THEME_OPTIONS.indexOf(currentTheme);
+				const nextTheme = THEME_OPTIONS[(i + 1) % THEME_OPTIONS.length];
+				applyTheme(nextTheme, true);
+			};
+		}
+	}
+
+	window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+		if (getPreferredTheme() === "system") {
+			applyTheme("system");
+		}
+	});
+
+	setupThemeToggle();
+	window.addEventListener("astro:after-swap", setupThemeToggle);
+</script>
