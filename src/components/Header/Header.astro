@@ -1,0 +1,32 @@
+---
+import MobileMenu from "@/components/Header/MobileMenu.vue";
+
+const menuItems = [
+	{ name: "Home", href: "#home" },
+	{ name: "About", href: "#about" },
+	{ name: "Projects", href: "#projects" },
+	{ name: "Contact", href: "#contact" },
+];
+---
+
+<header class="bg-background fixed z-50 w-full md:shadow-xl/20">
+	<nav class="flex h-16 items-center justify-around">
+		<a class="text-xl font-semibold tracking-wider uppercase md:text-2xl" href="/"> Ng Zhun Onn </a>
+
+		<ul class="hidden md:flex md:gap-8 lg:gap-14">
+			{
+				menuItems.map((item) => (
+					<li>
+						<a href={item.href} class="hover:underline">
+							{item.name}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+
+		<MobileMenu menuItems={menuItems} client:load />
+	</nav>
+</header>
+
+<div id="dropdown"></div>

@@ -3,7 +3,7 @@ import "@/styles/global.css";
 
 import Avatar from "@/assets/avatar.png";
 
-import Header from "@/components/Header.vue";
+import Header from "@/components/Header/Header.astro";
 import Footer from "@/components/Footer.vue";
 
 const { title, description } = Astro.props;
@@ -20,7 +20,7 @@ const { title, description } = Astro.props;
 		<meta name="description" content={description} />
 	</head>
 	<body class="bg-background text-text">
-		<Header client:load />
+		<Header />
 
 		<main class="pt-16"></main>
 
