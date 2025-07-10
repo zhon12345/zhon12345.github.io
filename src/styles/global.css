@@ -3,18 +3,130 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-text: rgb(var(--text));
-  --color-background: rgb(var(--background));
+  --primary-a0: oklch(0.7474 0.1313 256.66); /* 75afff */
+  --primary-a10: oklch(0.7317 0.1151 257.32); /* #79aaf0 */
+  --primary-a20: oklch(0.7141 0.1012 258.94); /* #7ca4e2 */
+  --primary-a30: oklch(0.6978 0.0853 259.31); /* #7e9fd3 */
+  --primary-a40: oklch(0.6823 0.0704 260.35); /* #809ac5 */
+  --primary-a50: oklch(0.6643 0.0567 262.54); /* #8194b7 */
+
+  --surface-a0: oklch(0.977 0.004 286.33); /* #f7f7fa */
+  --surface-a10: oklch(0.9349 0.004 286.32); /* #e9e9ec */
+  --surface-a20: oklch(0.8923 0.0041 286.32); /* #dbdbde */
+  --surface-a30: oklch(0.852 0.0027 286.34); /* #ceced0 */
+  --surface-a40: oklch(0.8084 0.0028 286.34); /* #c0c0c2 */
+  --surface-a50: oklch(0.7671 0.0014 286.37); /* #b3b3b4 */
+
+  --color-text-50: oklch(0.9731 0 0); /* #f6f6f6 */
+  --color-text-100: oklch(0.928 0 0); /* #e7e7e7 */
+  --color-text-200: oklch(0.8607 0 0); /* #d1d1d1 */
+  --color-text-300: oklch(0.7572 0 0); /* #b0b0b0 */
+  --color-text-400: oklch(0.6268 0 0); /* #888888 */
+  --color-text-500: oklch(0.5348 0 0); /* #6d6d6d */
+  --color-text-600: oklch(0.4784 0 0); /* #5d5d5d */
+  --color-text-700: oklch(0.4276 0 0); /* #4f4f4f */
+  --color-text-800: oklch(0.3904 0 0); /* #454545 */
+  --color-text-900: oklch(0.36 0 0); /* #3d3d3d */
+  --color-text-950: oklch(0.1149 0 0); /* #050505 */
+
+  --color-primary-logo: var(--primary-a0);
+  --color-primary-accent: var(--primary-a10);
+  --color-primary: var(--primary-a20);
+  --color-primary-muted: var(--primary-a30);
+  --color-primary-subtle: var(--primary-a40);
+  --color-primary-label: var(--primary-a50);
+
+  --color-surface: var(--surface-a0);
+  --color-surface-muted: var(--surface-a10);
+  --color-surface-subtle: var(--surface-a20);
+  --color-surface-border: var(--surface-a30);
+  --color-surface-disabled: var(--surface-a50);
+
+  --color-text: var(--color-text-950);
+  --color-text-muted: var(--color-text-700);
+  --color-text-disabled: var(--color-text-100);
+  --color-text-inverse: var(--color-text-50);
+
+  --text-*: initial;
+
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.375rem;
+
+  --text-base: 1rem;
+  --text-base--line-height: 1.5rem;
+
+  --text-lg: 1.25rem;
+  --text-lg--line-height: 1.75rem;
+
+  --text-xl: 1.5rem;
+  --text-xl--line-height: 2rem;
+
+  --text-2xl: 1.875rem;
+  --text-2xl--line-height: 2.375rem;
+
+  --text-3xl: 2.375rem;
+  --text-3xl--line-height: 2.875rem;
+
+  --text-4xl: 2.875rem;
+  --text-4xl--line-height: 3.375rem;
+
+  --text-5xl: 3.5rem;
+  --text-5xl--line-height: 4rem;
+
+  --text-6xl: 4.25rem;
+  --text-6xl--line-height: 4.75rem;
 }
 
 @layer base {
-  :root {
-    --text: 31 31 31;
-    --background: 237 237 237;
+  .dark {
+    --primary-a10: oklch(0.7765 0.1144 258.01); /* #88b8ff */
+    --primary-a20: oklch(0.8031 0.0993 259.81); /* #99c0ff */
+    --primary-a30: oklch(0.8316 0.0838 260.76); /* #a9c9ff */
+    --primary-a40: oklch(0.8598 0.0689 261.35); /* #b8d2ff */
+    --primary-a50: oklch(0.8882 0.054282 262.2189); /* #c7dbff */
+
+    --surface-a0: oklch(0.1966 0.004 286.03); /* #151517 */
+    --surface-a10: oklch(0.2858 0.0036 286.17); /* #2a2a2c */
+    --surface-a20: oklch(0.376 0.0034 286.24); /* #414143 */
+    --surface-a30: oklch(0.4647 0.0032 286.27); /* #59595b */
+    --surface-a40: oklch(0.5527 0.0031 286.3); /* #727274 */
+    --surface-a50: oklch(0.6437 0.0015 286.36); /* #8d8d8e */
+
+    --color-text: var(--color-text-50);
+    --color-text-muted: var(--color-text-300);
+    --color-text-disabled: var(--color-text-400);
+    --color-text-inverse: var(--color-text-950);
   }
 
-  .dark {
-    --text: 224 224 224;
-    --background: 18 18 18;
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1 {
+    @apply text-6xl font-semibold;
+  }
+
+  h2 {
+    @apply text-5xl font-semibold;
+  }
+
+  h3 {
+    @apply text-4xl font-semibold;
+  }
+
+  h4 {
+    @apply text-3xl font-semibold;
+  }
+
+  h5 {
+    @apply text-2xl font-semibold;
+  }
+
+  h6 {
+    @apply text-xl font-semibold;
+  }
+
+  p {
+    @apply text-base;
   }
 }

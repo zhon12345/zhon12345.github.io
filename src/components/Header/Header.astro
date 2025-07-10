@@ -11,27 +11,25 @@ const menuItems = [
 ];
 ---
 
-<header class="bg-background fixed z-50 w-full md:shadow-xl/20">
+<header class="bg-surface sticky top-0 z-50 h-16 w-full content-center md:shadow-xl/20">
 	<Container>
-		<nav class="flex h-16 items-center justify-between md:grid md:grid-cols-3 md:items-center">
-			<div class="md:justify-self-start">
-				<a class="text-xl font-semibold tracking-wider uppercase lg:text-2xl" href="/"> Ng Zhun Onn </a>
-			</div>
+		<nav class="flex items-center justify-between">
+			<a class="text-xl font-semibold tracking-wider uppercase" href="/"> Ng Zhun Onn </a>
 
-			<ul class="hidden gap-6 justify-self-center md:flex lg:gap-8 xl:gap-10 2xl:gap-12">
-				{
-					menuItems.map((item) => (
-						<li>
-							<a href={item.href} class="hover:underline">
-								{item.name}
-							</a>
-						</li>
-					))
-				}
-			</ul>
+			<div class="flex justify-center gap-6">
+				<ul class="hidden gap-6 md:flex">
+					{
+						menuItems.map((item) => (
+							<li>
+								<a href={item.href} class="hover:underline">
+									{item.name}
+								</a>
+							</li>
+						))
+					}
+				</ul>
 
-			<div class="flex gap-4 md:justify-self-end">
-				<ThemeToggle class="w-6 cursor-pointer md:w-7" />
+				<ThemeToggle class="w-6 cursor-pointer" />
 
 				<MobileMenu menuItems={menuItems} client:load />
 			</div>
