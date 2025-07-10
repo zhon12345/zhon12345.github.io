@@ -75,6 +75,8 @@
 
   --text-6xl: 4.25rem;
   --text-6xl--line-height: 4.75rem;
+
+  --breakpoint-2xl: initial;
 }
 
 @layer base {
@@ -128,5 +130,18 @@
 
   p {
     @apply text-base;
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+
+  @media (min-width: 640px) {
+    padding-inline: 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    padding-inline: 3rem;
   }
 }

@@ -1,5 +1,4 @@
 ---
-import Container from "@/components/Container.astro";
 import ThemeToggle from "@/components/Header/ThemeToggle.astro";
 import MobileMenu from "@/components/Header/MobileMenu.vue";
 
@@ -12,29 +11,27 @@ const menuItems = [
 ---
 
 <header class="bg-surface sticky top-0 z-50 h-16 w-full content-center md:shadow-xl/20">
-	<Container>
-		<nav class="flex items-center justify-between">
-			<a class="text-xl font-semibold tracking-wider uppercase" href="/"> Ng Zhun Onn </a>
+	<nav class="container flex items-center justify-between">
+		<a class="text-xl font-semibold tracking-wider uppercase" href="/"> Ng Zhun Onn </a>
 
-			<div class="flex justify-center gap-6">
-				<ul class="hidden gap-6 md:flex">
-					{
-						menuItems.map((item) => (
-							<li>
-								<a href={item.href} class="hover:underline">
-									{item.name}
-								</a>
-							</li>
-						))
-					}
-				</ul>
+		<div class="flex justify-center gap-6">
+			<ul class="hidden gap-6 md:flex">
+				{
+					menuItems.map((item) => (
+						<li>
+							<a href={item.href} class="hover:underline">
+								{item.name}
+							</a>
+						</li>
+					))
+				}
+			</ul>
 
-				<ThemeToggle class="w-6 cursor-pointer" />
+			<ThemeToggle class="w-6 cursor-pointer" />
 
-				<MobileMenu menuItems={menuItems} client:load />
-			</div>
-		</nav>
-	</Container>
+			<MobileMenu menuItems={menuItems} client:load />
+		</div>
+	</nav>
 </header>
 
 <div id="dropdown"></div>
