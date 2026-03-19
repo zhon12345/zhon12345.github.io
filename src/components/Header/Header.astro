@@ -12,7 +12,7 @@ const menuItems = [
 
 <header class="bg-surface sticky top-0 z-50 h-16 w-full content-center md:shadow-xl/20">
 	<nav class="container flex items-center justify-between">
-		<a class="text-xl font-semibold tracking-wider uppercase" href="/"> Ng Zhun Onn </a>
+		<a id="header-title" class="text-xl font-semibold tracking-wider uppercase" href="/"> Ng Zhun Onn </a>
 
 		<div class="flex justify-center gap-6">
 			<ul class="hidden gap-6 md:flex">
@@ -35,3 +35,25 @@ const menuItems = [
 </header>
 
 <div id="dropdown" class="relative z-10"></div>
+
+<script is:inline>
+	document.addEventListener("DOMContentLoaded", () => {
+		const headerTitle = document.getElementById("header-title");
+		const hero = document.getElementById("home");
+
+		if (!headerTitle || !hero) return;
+
+		const updateTitle = (entries) => {
+			entries.forEach((entry) => {
+				headerTitle.textContent = entry.isIntersecting ? "NZO" : "Ng Zhun Onn";
+			});
+		};
+
+		const observer = new IntersectionObserver(updateTitle, {
+			root: null,
+			threshold: 0.6,
+		});
+
+		observer.observe(hero);
+	});
+</script>
