@@ -1,19 +1,22 @@
 ---
-import Icon from "@/components/Icon.astro";
-
 const year = new Date().getFullYear();
 ---
 
-<footer class="bg-surface-muted flex h-20 flex-col items-center gap-2">
-	<a href="#home" class="duration-300 ease-out hover:-translate-y-1 hover:opacity-75" aria-label="Back to Top">
-		<Icon name="up" class="w-6" />
-	</a>
+<footer class="bg-surface-muted">
+	<div class="container flex w-full justify-between">
+		<div class="flex flex-col gap-2">
+			<h4>Ng Zhun Onn</h4>
+			<p class="text-text-secondary text-sm">
+				&copy; <span id="currentYear">{{ year }}</span> Ng Zhun Onn. All rights reserved.
+			</p>
+		</div>
 
-	<hr class="w-4/5" />
-
-	<p class="text-text-secondary text-sm md:text-base">
-		&copy; <span id="currentYear">{{ year }}</span> Ng Zhun Onn. All rights reserved.
-	</p>
+		<ul class="text-text-secondary flex items-center gap-4">
+			<li><a href="http://linkedin.com/in/ngzhunonn" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+			<li><a href="http://github.com/zhon12345" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+			<li><a href="mailto:ngzhunonn@gmail.com">Email</a></li>
+		</ul>
+	</div>
 </footer>
 
 <script is:inline>
