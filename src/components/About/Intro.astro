@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import Flag from "@/assets/flag.png";
-import Square from "@/assets/square.png";
 import Portrait from "@/assets/portrait.png";
 import Button from "@/components/Button.astro";
 
@@ -19,12 +18,11 @@ const { summary = false } = Astro.props;
 				<h4 class="text-primary mb-4 text-start text-sm uppercase">About Me</h4>
 				<div class="flex flex-col items-center gap-4 lg:flex-row lg:justify-between">
 					<p class="text-justify lg:max-w-3/4">
-						A tech nerd, software engineer, Diploma in Information Technology holder, and Bachelor of Software
-						Engineering student from
-						<a href="https://tarc.edu.my/">TAR UMT</a>, based in Kuala Lumpur,
+						A software engineer based in Kuala Lumpur,
 						<Image src={Flag} alt="Jalur Gemilang, the Malaysian flag" class="inline-block w-5 align-baseline" />
-						Malaysia. I'm passionate about Free and Open Source Software (FOSS) and a strong advocate for digital
-						privacy.
+						Malaysia, with 1 year of professional experience and currently pursuing a Bachelor of Software Engineering.
+						I build modern web applications and contribute to Free and Open Source Software (FOSS), while practicing
+						strong digital privacy principles.
 					</p>
 
 					<Button href="/about">Read More</Button>
@@ -33,26 +31,32 @@ const { summary = false } = Astro.props;
 		</section>
 	) : (
 		<div class="flex flex-col lg:flex-row lg:items-start lg:gap-8">
-			<div class="mb-6 flex flex-1 justify-center overflow-hidden lg:mb-0 lg:justify-start">
-				<Image src={Square} alt="A picture of Zhun Onn" class="block w-60 md:w-80 lg:hidden" />
-				<Image src={Portrait} alt="A picture of Zhun Onn" height={400} class="hidden lg:block" />
+			<div class="mb-6 flex justify-center overflow-hidden lg:mb-0">
+				<Image src={Portrait} alt="A picture of Zhun Onn" height={400} />
 			</div>
 
-			<div class="*data-paragraph:text-pretty *:data-paragraph:text-justify lg:max-w-2/3">
-				<p class="mb-4" data-paragraph>
-					Hi, I’m Zhun Onn — a tech nerd, software engineer, Diploma in Information Technology holder, and Bachelor of
-					Software Engineering student from
-					<a href="https://tarc.edu.my/">TAR UMT</a>, based in Kuala Lumpur,
+			<div class="flex flex-col gap-4 *:data-paragraph:text-justify lg:max-w-2/3">
+				<p data-paragraph>
+					Hi, I’m Zhun Onn — a software engineer based in Kuala Lumpur,
 					<Image src={Flag} alt="Jalur Gemilang, the Malaysian flag" class="inline-block w-5 align-baseline" />
-					Malaysia. I'm passionate about Free and Open Source Software (FOSS) and a strong advocate for digital privacy.
+					Malaysia, and Bachelor of Software Engineering student at <a href="https://tarc.edu.my/">TAR UMT</a>. I have 1
+					year of professional experience, a Diploma in Information Technology, and have been programming since the age
+					of 15.
 				</p>
 
-				<p class="mb-6" data-paragraph>
-					I specialize in full-stack development — building fast, maintainable, and scalable web applications. My
-					experience spans working with both SQL and NoSQL databases, RESTful APIs, and modern tooling.
+				<p data-paragraph>
+					I specialize in full-stack development, building fast, maintainable, and scalable web applications. My
+					experience includes working with modern frontend and backend technologies, RESTful APIs, and both SQL and
+					NoSQL databases.
 				</p>
 
-				<div class="flex justify-start">
+				<p data-paragraph>
+					Beyond development, I contribute to Free and Open Source Software (FOSS) in my spare time. I also advocate and
+					practice strong digital privacy principles, which influence the tools I use and how I approach building
+					software.
+				</p>
+
+				<div class="mt-2 flex justify-start">
 					<Button href="/resume.pdf">Resume</Button>
 				</div>
 			</div>
