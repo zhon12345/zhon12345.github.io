@@ -14,7 +14,7 @@
 	</button>
 
 	<!-- Mobile Dropdown Menu -->
-	<Teleport to="#dropdown">
+	<Teleport v-if="isMounted" to="#dropdown">
 		<ul
 			ref="dropdown"
 			class="bg-surface-elevated dark:bg-surface-muted fixed top-16 left-0 flex w-full flex-col gap-3 pb-5 text-lg duration-400 motion-reduce:duration-100 md:hidden"
@@ -30,15 +30,20 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, onBeforeUnmount } from "vue";
+import { ref, watch, onMounted, onBeforeUnmount } from "vue";
 
 const props = defineProps<{
 	menuItems: { name: string; href: string }[];
 }>();
 
 const isMenuOpen = ref(false);
+const isMounted = ref(false);
 const hamburger = ref<HTMLElement | null>(null);
 const dropdown = ref<HTMLElement | null>(null);
+
+onMounted(() => {
+	isMounted.value = true;
+});
 
 function handleClickOutside(event: MouseEvent) {
 	const target = event.target as Node;
