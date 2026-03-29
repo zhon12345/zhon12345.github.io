@@ -3,15 +3,14 @@ import ThemeToggle from "@/components/Header/ThemeToggle.astro";
 import MobileMenu from "@/components/Header/MobileMenu.vue";
 
 const menuItems = [
-	{ name: "Home", href: "#home" },
-	{ name: "About", href: "#about" },
-	{ name: "Projects", href: "#projects" },
-	{ name: "Contact", href: "#contact" },
+	{ name: "Home", href: "/" },
+	{ name: "About", href: "/about" },
+	{ name: "Projects", href: "#" },
 ];
 ---
 
 <header class="bg-surface-muted sticky top-0 z-50 h-16 w-full content-center">
-	<nav class="container flex items-center justify-between">
+	<nav class="container flex items-center justify-between py-0">
 		<a id="header-title" class="text-xl font-semibold tracking-wider uppercase" href="/"> Ng Zhun Onn </a>
 
 		<div class="flex justify-center gap-6">
