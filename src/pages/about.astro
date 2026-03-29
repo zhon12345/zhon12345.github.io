@@ -1,12 +1,10 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Intro from "@/components/About/Intro.astro";
+import Experience from "@/components/About/Experience.vue";
 ---
 
 <Layout title="About Me | Ng Zhun Onn" description="">
-	<section id="about" class="bg-surface">
-		<div class="container">
-			<Intro />
-		</div>
-	</section>
+	<Intro />
+	<Experience client:load />
 </Layout>

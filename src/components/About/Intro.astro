@@ -13,7 +13,7 @@ const { summary = false } = Astro.props;
 
 {
 	summary ? (
-		<section id="about" class="bg-surface-elevated">
+		<section class="bg-surface-elevated">
 			<div class="container">
 				<h4 class="text-primary mb-4 text-start text-sm uppercase">About Me</h4>
 				<div class="flex flex-col items-center gap-4 lg:flex-row lg:justify-between">
@@ -30,36 +30,38 @@ const { summary = false } = Astro.props;
 			</div>
 		</section>
 	) : (
-		<div class="flex flex-col lg:flex-row lg:items-start lg:gap-8">
-			<div class="mb-6 flex justify-center overflow-hidden lg:mb-0">
-				<Image src={Portrait} alt="A picture of Zhun Onn" height={400} />
-			</div>
+		<section>
+			<div class="container flex flex-col lg:flex-row lg:items-start lg:gap-8">
+				<div class="mb-6 flex justify-center overflow-hidden lg:mb-0">
+					<Image src={Portrait} alt="A picture of Zhun Onn" height={400} />
+				</div>
 
-			<div class="flex flex-col gap-4 *:data-paragraph:text-justify lg:max-w-2/3">
-				<p data-paragraph>
-					Hi, I’m Zhun Onn — a software engineer based in Kuala Lumpur,
-					<Image src={Flag} alt="Jalur Gemilang, the Malaysian flag" class="inline-block w-5 align-baseline" />
-					Malaysia, and Bachelor of Software Engineering student at <a href="https://tarc.edu.my/">TAR UMT</a>. I have 1
-					year of professional experience, a Diploma in Information Technology, and have been programming since the age
-					of 15.
-				</p>
+				<div class="flex flex-col gap-4 *:data-paragraph:text-justify lg:max-w-2/3">
+					<p data-paragraph>
+						Hi, I’m Zhun Onn — a software engineer based in Kuala Lumpur,
+						<Image src={Flag} alt="Jalur Gemilang, the Malaysian flag" class="inline-block w-5 align-baseline" />
+						Malaysia, and Bachelor of Software Engineering student at <a href="https://tarc.edu.my/">TAR UMT</a>. I have
+						1 year of professional experience, a Diploma in Information Technology, and have been programming since the
+						age of 15.
+					</p>
 
-				<p data-paragraph>
-					I specialize in full-stack development, building fast, maintainable, and scalable web applications. My
-					experience includes working with modern frontend and backend technologies, RESTful APIs, and both SQL and
-					NoSQL databases.
-				</p>
+					<p data-paragraph>
+						I specialize in full-stack development, building fast, maintainable, and scalable web applications. My
+						experience includes working with modern frontend and backend technologies, RESTful APIs, and both SQL and
+						NoSQL databases.
+					</p>
 
-				<p data-paragraph>
-					Beyond development, I contribute to Free and Open Source Software (FOSS) in my spare time. I also advocate and
-					practice strong digital privacy principles, which influence the tools I use and how I approach building
-					software.
-				</p>
+					<p data-paragraph>
+						Beyond development, I contribute to Free and Open Source Software (FOSS) in my spare time. I also advocate
+						and practice strong digital privacy principles, which influence the tools I use and how I approach building
+						software.
+					</p>
 
-				<div class="mt-2 flex justify-start">
-					<Button href="/resume.pdf">Resume</Button>
+					<div class="mt-2 flex justify-start">
+						<Button href="/resume.pdf">Resume</Button>
+					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	)
 }
