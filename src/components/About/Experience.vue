@@ -21,7 +21,11 @@
 
 			<!-- Tab Content -->
 			<div class="space-y-8">
-				<div v-for="item in activeTab === 'career' ? career : education" class="flex gap-4 space-y-2">
+				<div
+					v-for="item in activeTab === 'career' ? career : education"
+					:key="item.organization"
+					class="flex gap-4 space-y-2"
+				>
 					<a :href="item.href" target="_blank" rel="noopener noreferrer">
 						<div v-if="item.logo" class="aspect-square size-12 rounded-full bg-[#fff] p-1">
 							<img
@@ -40,7 +44,7 @@
 						</a>
 
 						<div class="space-y-1">
-							<div v-for="entry in item.entries">
+							<div v-for="entry in item.entries" :key="entry.title">
 								<div
 									class="*:text-text-secondary flex flex-col *:text-sm md:flex-row md:items-baseline md:justify-between"
 								>
@@ -50,10 +54,8 @@
 									</span>
 								</div>
 
-								<ul v-if="entry.content" class="text-text-secondary list-outside list-disc pt-2 pl-4">
-									<li v-for="item in entry.content" class="text-justify text-sm">
-										{{ item }}
-									</li>
+								<ul v-if="entry.contentHTML" class="text-text-secondary list-outside list-disc pt-2 pl-4">
+									<li v-for="item in entry.contentHTML" class="text-justify text-sm" v-html="item"></li>
 								</ul>
 							</div>
 						</div>
@@ -72,7 +74,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { career } from "@/data/career";
+import { processedCareer as career } from "@/data/career";
 import { education } from "@/data/education";
 
 const activeTab = ref<"career" | "education">("career");

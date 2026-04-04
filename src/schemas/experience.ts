@@ -6,6 +6,7 @@ const ExperienceEntry = z.object({
 	start: z.date().optional(),
 	end: z.date().optional(),
 	content: z.array(z.string()).optional(),
+	contentHTML: z.array(z.string()).optional(),
 });
 
 const Experience = ({ image }: SchemaContext) =>
