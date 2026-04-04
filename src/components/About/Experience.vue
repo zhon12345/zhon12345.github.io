@@ -1,9 +1,9 @@
 <template>
 	<section>
-		<div class="container">
+		<div class="container pt-0">
 			<!-- Tab Buttons -->
 			<div
-				class="*:text-text-secondary *:hover:text-text mb-8 flex gap-4 *:text-sm *:font-semibold *:tracking-wide *:uppercase *:transition-colors"
+				class="*:text-text-secondary *:hover:text-text mb-8 flex gap-4 *:cursor-pointer *:text-sm *:font-semibold *:tracking-wide *:uppercase *:transition-colors"
 			>
 				<button
 					@click="activeTab = 'career'"
