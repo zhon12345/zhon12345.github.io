@@ -14,7 +14,7 @@ const career: Experience[] = [
 				title: "Software Engineer Intern",
 				start: new Date(2026, 0),
 				content: [
-					"Contributing to an [Abuse Management System](https://web.plus/abuse-management-for-service-providers/) used by the Singapore Network Information Center (SGNIC) to handle and manage abuse reports.",
+					"Contributing to an [Abuse Management System](https://web.plus/abuse-management-for-service-providers/) used by the [Singapore Network Information Center (SGNIC)](https://sgnic.sg/) to handle and manage abuse reports.",
 				],
 			},
 		],
