@@ -1,13 +1,15 @@
 ---
-import Icon from "@/components/Icon.astro";
+import Sun from "@/components/Icons/Sun.svg";
+import Moon from "@/components/Icons/Moon.svg";
+import Computer from "@/components/Icons/Computer.svg";
 
 const { class: className } = Astro.props;
 ---
 
 <button id="themeToggle" class={className} aria-label="Toggle Theme">
-	<Icon name="sun" id="light" class="hidden" />
-	<Icon name="moon" id="dark" class="hidden" />
-	<Icon name="computer" id="system" class="hidden" />
+	<Sun id="light" class="hidden" />
+	<Moon id="dark" class="hidden" />
+	<Computer id="system" class="hidden" />
 </button>
 
 <script is:inline>
